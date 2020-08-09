@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Webpack Starter Kit</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+  </head>
+
+  <body>
+
+    <header id="header">
+      <!-- <link rel="import" href="html/header.html"> -->
+    </header>
+
+    <main id="main">
+      <link rel="import" href="import/main.html">
+    </main>
+
+    <footer id="footer"></footer>
+    <article class="intro">
+
+      <h1>goit-js-hw-13-image-finder</h1>
+
+      <form id="search-form" class="form_search">
+        <input
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Write movie name and click Enter"
+          class="input_search"
+        />
+        <button type="submit" class="button_search"><i class="material-icons">search</i></button>
+      </form>
+
+
+
+      <ul class="gallery" id="js-list"></ul>
+      <button tupe="button" data-action="load-more" class="load-more-Btn">Load more</button> 
+      
+    </article>
+
+  <script type="module" src="js/index.js"></script>
+
+  <!-- //= html/footer.html -->
+  </body>
+</html>
+
