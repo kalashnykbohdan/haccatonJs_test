@@ -1,7 +1,7 @@
 'use strict';
 
-import './sass/styles.css';
-import './sass/styles.scss';
+import './scss/styles.css';
+import './scss/styles.scss';
 
 import './js/components/1InitialHomePage.js';
 import './js/components/2searchAndPlaginationHomePage.js';
