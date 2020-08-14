@@ -1,0 +1,9 @@
+{{#each this}}
+<li class="card__container">
+    <div class="card__mark">{{vote_average}}</div>
+    <div class="card__title">{{title}}</div>
+    <img class="card__img"  src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" 
+    alt="{{title}}" data-id="{{ id }}">
+    </li>
+{{/each}}
+

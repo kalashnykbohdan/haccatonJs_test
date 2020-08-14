@@ -1,0 +1,36 @@
+<div class="detailPage_wrapper">
+    <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt={{title}} class="detailPage_img" />
+    <div class="detailPage_description_wrapper">
+        <h3 class="detailPage_h3">{{title}} ({{release_date}})</h3>
+        <ul class="detailPage_movie_tags">
+            <li class="detailPage_movie_tag">
+                <span class="detailPage_movie_tag_name">vote / votes</span>
+                <span>{{vote_average}} / {{vote_count}}</span>
+            </li>
+            <li class="detailPage_movie_tag">
+                <span class="detailPage_movie_tag_name">popularity</span>
+                <span>{{popularity}}</span>
+            </li>
+            <li class="detailPage_movie_tag">
+                <span class="detailPage_movie_tag_name">original title</span>
+                <span>{{original_title}}</span>
+            </li>
+            <li class="detailPage_movie_tag">
+                <span class="detailPage_movie_tag_name">genre</span>
+                <ul class="detailPage_movie_tag_genre_list">
+                    {{#each genres}}
+                    <li class="detailPage_movie_tag_genre_list_item">{{this}},</li>
+                    {{/each}}
+                </ul>
+            </li>
+        </ul>
+        <h3 class="detailPage_h3">About</h3>
+        <p class="detailPage_overview">{{overview}}</p>
+        <div class="detailPage_button_block_wrapper">
+            <button type="button" id="button_watched" class="detailPage_img_btn">
+            </button>
+            <button type="button" id="button_queue" class="detailPage_img_btn">
+            </button>
+        </div>
+    </div>
+</div>

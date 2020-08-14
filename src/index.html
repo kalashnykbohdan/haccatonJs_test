@@ -14,19 +14,37 @@
 
   <body>
 
-    <header id="header">
-
+    <header id="header" class="page-header">
+      <div class="page-container">
+        <nav class="page-header__nav header-nav">
+          <a href="/" class="header-nav__logo">
+            Filmoteka
+          </a>
+          <ul class="header-nav__list">
+            <li class="header-nav__item">
+              <a href="/" class="header-nav__link header-nav__link--main"
+                >Home</a>
+            </li>
+            <li class="header-nav__item">
+              <a
+                href="/library"
+                class="header-nav__link header-nav__link--library"
+                >My Library</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <main id="main">
+    <main id="root">
     </main>
 
-    <footer id="footer"></footer>
+    <footer id="footer" class="page-footer">
+    </footer>
 
 
-  <script type="module" src="js/index.js"></script>
 
-  <!-- //= html/footer.html -->
+
   </body>
 </html>
 
