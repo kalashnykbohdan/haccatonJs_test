@@ -18,7 +18,7 @@ $color: #3f3f57;
 
     .page-footer{
         margin-top: 20px;
-        max-width: 768px;
+        min-width: 768px;
         height: 50px;
         background-color: $background-color;
         text-align: centr;
@@ -35,7 +35,7 @@ $color: #3f3f57;
 
     .page-footer{
         margin-top: 20px;
-        max-width: 1024px;
+        min-width: 1024px;
         height: 50px;
         background-color: $background-color;
         text-align: centr;
