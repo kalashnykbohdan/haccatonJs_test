@@ -1,5 +1,15 @@
+$background-color: #77c1bb;
+$color: #3f3f57;
+
 .search-wrapper{
     height: 50px;
 }
 
-
+.load-more-Btn{
+    width: 150px;
+    padding: 5px;
+    background-color: $background-color;
+    border: 0;
+    color: $color;
+    cursor: pointer;
+}

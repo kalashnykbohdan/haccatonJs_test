@@ -1,0 +1,71 @@
+.libraryBox {
+    // padding: 10px 0;
+  }
+  
+  .libnav {
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    background-color: #f3f6f6;
+    box-shadow: 0px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  }
+  .libnav__list {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0px;
+  }
+  .libnav__button {
+    padding: 10px 42px;
+    border: none;
+    background-color: #f3f6f6;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.75);
+    transition: background-color 0.2s linear;
+  }
+
+  .active-nav-button {
+    border-bottom: none;
+    margin-bottom: 2px;
+    background-color: #77c1bb;
+    color: #f3f6f6;
+  }
+  .home__list {
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .home__list {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  
+    .home__list-item {
+      width: 325px;
+      height: 180px;
+      margin: 10px;
+    }
+    .home__list-rate {
+      left: 300px;
+    }
+    .home__list-header {
+      top: 160px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .home__list-item {
+      width: 450px;
+      height: 245px;
+    }
+    .home__list-rate {
+      left: 420px;
+    }
+    .home__list-header {
+      top: 210px;
+    }
+  }
+  

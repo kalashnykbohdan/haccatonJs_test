@@ -40,24 +40,60 @@ const refs = {
     drawWatchedFilmList();
   }
   
-  // imgPath, filmTitle, movieId, voteAverage
-  function createLibraryCardFunc({ backdrop_path, title, id, vote_average }) {
-    const myLibHome = document.querySelector('#mylib-home');
 
-    const libListItemMarkup = `<li class="home__list-item" data-index="${id}">
-      <div>
-        <div class="home__list-rate">
-          <p>${vote_average}</p>
-        </div>
-        <div class="home__list-header"><h2>${title}</h2></div>
-      </div>
-      <img class="home__list-img" src="https://image.tmdb.org/t/p/w500/${backdrop_path}" />
-    </li>`;
-    myLibHome.insertAdjacentHTML('beforeend', libListItemMarkup);
-    // refs.myLibListItem.addEventListener('click', () =>
-    //   activeDetailsPage(movieId, true),
-    // );
+  function createLibraryCardFunc({ backdrop_path, title, id, vote_average }) {
+
+    const myLibHome = document.querySelector('#mylib-home');
+  
+    const a = document.createElement('a');
+    a.href= `/details?filmId=${id}`;
+    // console.log(a.href);
+  
+    const li = document.createElement('li');
+    li.className = 'card__container';
+  
+    const divMark = document.createElement('div');
+    divMark.className = 'card__mark';
+    divMark.innerHTML = vote_average!==0?vote_average:'--';
+  
+    const divTitle = document.createElement('div');
+    divTitle.className = 'card__title';
+    divTitle.innerHTML = title;
+  
+    const img = document.createElement('img');
+    img.className = 'card__img';
+    let imgSrc = backdrop_path!==null?`https://image.tmdb.org/t/p/w500/${backdrop_path}`:"https://image.tmdb.org/t/p/w500//gkuyOdCeuKLdOlwQIUF44SHsYCq.jpg";
+    img.setAttribute('src', imgSrc);
+    img.setAttribute('alt', title);
+  
+  
+    li.append(divMark, divTitle, img);
+    a.append(li);
+  
+    myLibHome.appendChild(a);
+  
+    // li.addEventListener('click', () => activeDetailsPage(id, false));
+  
+    return a;
   }
+  // imgPath, filmTitle, movieId, voteAverage
+  // function createLibraryCardFunc({ backdrop_path, title, id, vote_average }) {
+  //   const myLibHome = document.querySelector('#mylib-home');
+
+  //   const libListItemMarkup = `<li class="home__list-item" data-index="${id}">
+  //     <div>
+  //       <div class="home__list-rate">
+  //         <p>${vote_average}</p>
+  //       </div>
+  //       <div class="home__list-header"><h2>${title}</h2></div>
+  //     </div>
+  //     <img class="home__list-img" src="https://image.tmdb.org/t/p/w500/${backdrop_path}" />
+  //   </li>`;
+  //   myLibHome.insertAdjacentHTML('beforeend', libListItemMarkup);
+  //   // refs.myLibListItem.addEventListener('click', () =>
+  //   //   activeDetailsPage(movieId, true),
+  //   // );
+  // }
 
 
 //   function renderWatchedFilms() {

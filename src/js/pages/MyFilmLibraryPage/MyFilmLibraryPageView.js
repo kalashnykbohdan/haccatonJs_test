@@ -12,7 +12,6 @@ export default function (props) {
       </div>
     </nav>
     <ul id="mylib-home" class="home__list"></ul>
-    <ul id="mylib-home" class="home__list"></ul>
   </div>
     `;
 }

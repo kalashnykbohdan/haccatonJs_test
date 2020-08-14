@@ -20,8 +20,9 @@ export default function (props) {
       </div>
 
       <div class="pagination">
-        <button tupe="button" data-action="load-more" class="load-more-Btn">Load more</button> 
+        <button tupe="button" data-action="load-more" class="load-more-Btn">Next page</button> 
       </div>
+
     
     `;
 }

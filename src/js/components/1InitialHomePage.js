@@ -23,6 +23,9 @@ export default function renderPopularMovies(){
         });
     //     
     fetchRequest.fetchGenres();
+    
+    const loadMoreBth = document.querySelector('button[data-action="load-more"]');
+    loadMoreBth.addEventListener('click',loadMoreBtnHandler);
 
 }
 
@@ -60,6 +63,23 @@ function createCardFunc({ backdrop_path, title, id, vote_average }) {
   // li.addEventListener('click', () => activeDetailsPage(id, false));
 
   return a;
+}
+
+function loadMoreBtnHandler(){
+  const list = document.querySelector('.cards__container');
+    
+  fetchRequest.fetchPopularMoviesList()
+      .then(films => {
+        films.map(film => {
+          renderFilms.push(film);
+          createCardFunc(film);
+          fragment.append(createCardFunc(film));
+        });
+        list.innerHTML = '';
+        list.append(fragment);  
+      });
+  //     
+  fetchRequest.fetchGenres();
 }
 
 

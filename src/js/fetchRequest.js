@@ -10,12 +10,13 @@ export default{
   fetchPopularMoviesList() {
     // const fragment = document.createDocumentFragment();
     return fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=60413e4c0935df0adbee558138220381&language=en-US&page=${this.pageNumber}`,
+      `https://api.themoviedb.org/3/movie/popular?api_key=60413e4c0935df0adbee558138220381&language=en-US&page=${this.page}`,
     )
       .then(res => res.json())
       .then(data => data.results)
       .then(results => 
         {
+          this.incrementPage();
           console.log(results);
 
           return results;
@@ -64,6 +65,9 @@ export default{
   incrementPage(){
     this.page += 1;
   },
+  // decrementPage(){
+  //   this.page -= 1;
+  // },
   resetPage(){
     this.page = 1;
   },
