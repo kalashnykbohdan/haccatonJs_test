@@ -13,7 +13,6 @@
 @import './reset.scss';
 @import './styles.css';
 
-
 header {
     width: 320px;
     padding: 0 22px;
@@ -49,11 +48,13 @@ footer{
 
     main {
         width: 716px;
+        min-height: calc(100vh - 126px);
     }
 
     footer{
       width: 716px;
       padding: 0 32px;
+      
     }
   
     .container {

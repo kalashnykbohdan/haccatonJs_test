@@ -112,6 +112,7 @@ const refs = {
     console.log(fromLocalStorage);
   
     if (fromLocalStorage === null || fromLocalStorage.length === 0) {
+      myLibHome.innerHTML = '';
       return myLibHome.insertAdjacentHTML(
         'beforeend',
         `<div class="no-list">
@@ -140,6 +141,7 @@ const refs = {
     watchedButton.classList.add('active-nav-button');
     const fromLocalStorage = JSON.parse(localStorage.getItem('filmsWatched'));
     if (fromLocalStorage === null || fromLocalStorage.length === 0) {
+      myLibHome.innerHTML = '';
       return myLibHome.insertAdjacentHTML(
         'beforeend',
         `<div class="no-list"
