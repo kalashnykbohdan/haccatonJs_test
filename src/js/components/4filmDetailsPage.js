@@ -1,17 +1,3 @@
-// // import './css/normalise.css';
-// // import './css/reset.css';
-// // import './css/fonts.css';
-// // import './css/container.css';
-// // import './css/styles.css';
-// import axios from 'axios';
-// import markupTemplate from '../../templates/4filmDetailsPage.hbs';
-
-
-
-// //==================axios==============
-// // let selectFilm = {};
-// export default {}
-
 const changingWidthPicture = () => {
   if (window.innerWidth >= 768 && window.innerWidth <= 1023) {
     return 'https://image.tmdb.org/t/p/w400';
@@ -39,29 +25,72 @@ const changingWidthPicture = () => {
 
 import fetchRequest from '../fetchRequest.js'
 import markupTemplate from '../../templates/4filmDetailsPage.hbs';
-// import filmDetailsPage from '../components/4filmDetailsPage.js';
-
-
-
 
 export default function (moveId){
+    // console.log('--------------');
+    // console.log(selectFilm);
+    console.log('export default function (moveId)');
+    // fetchRequest.fetchMovieDetails(moveId).then(maketView);
+
+    fetchRequest.fetchMovieDetails(moveId)
+    .then(date => {
+      Object.assign(selectFilm, date);
+      selectFilm.release_date = selectFilm.release_date.slice(0, 4);  
+      selectFilm.changingWidthPicture = changingWidthPicture();
+    })
+    .then(maketView)
+    .then(clickEventListener)
+
+    function clickEventListener(){
+      const button_watched = document.querySelector('#button_watched');
+      button_watched.addEventListener('click', toggleToWatched);
     
+      const button_queue = document.querySelector('#button_queue');
+      button_queue.addEventListener('click', toggleToQueue);
+
+      monitorButtonStatusText();
+    }
+    // setSelectFilm(moveId);
+
+    // if(setSelectFilm)
     
-    // console.log(genres);
-    // maketView();
-    setSelectFilm(moveId);
-    
-    window.onload = function () {
-        monitorButtonStatusText();
-        const button_watched = document.querySelector('#button_watched');
-        button_watched.addEventListener('click', toggleToWatched);
+
+    // makeRequest();
+
+    // const makeRequest = async() => {
+    //   selectFilm = await fetchRequest.fetchMovieDetails(moveId).then(maketView);
+    //   setSelectFilm(moveId);
       
-        const button_queue = document.querySelector('#button_queue');
-        button_queue.addEventListener('click', toggleToQueue);
-      };
+    // }
+    
+    // fetchRequest.fetchMovieDetails(moveId).then(date => {
+    //   Object.assign(selectFilm, date);
+    //   selectFilm.release_date = selectFilm.release_date.slice(0, 4);  
+    //   selectFilm.changingWidthPicture = changingWidthPicture();
+    //   selectFilm.genres = date.genres.map(d => {
+    //     d.name.toLowerCase();
+    //   });
+    // }).then(maketView)
+
+    // fetchRequest.fetchMovieDetails(moveId).then(maketView); 
+    
+    // window.onload = function () {
+        
+    //     console.log('window.onload');
+    //     const button_watched = document.querySelector('#button_watched');
+    //     button_watched.addEventListener('click', toggleToWatched);
+      
+    //     const button_queue = document.querySelector('#button_queue');
+    //     button_queue.addEventListener('click', toggleToQueue);
+
+    //     monitorButtonStatusText();
+
+        
+    //   };
+      
       
       const monitorButtonStatusText = () => {
-        const button_watched = document.querySelector('#button_watched');
+        const button_watched = document.querySelector('#button_watched'); 
         const button_queue = document.querySelector('#button_queue');
       
         const watchedFilms = JSON.parse(localStorage.getItem('filmsWatched')) || [];
@@ -109,29 +138,36 @@ export default function (moveId){
         monitorButtonStatusText();
       };
 
-      
-}
-//==============================================================================
-function setSelectFilm(moveId){
-    console.log(`setSelectFilm`);
-    // fetchRequest.fetchMovieDetails(moveId).then(date => {
-    //     Object.assign(selectFilm, date)
-    //     maketView(selectFilm);
-    // });
-    // maketView(selectFilm);
     
-    
-    fetchRequest.fetchMovieDetails(moveId).then(maketView);
-    maketView(selectFilm);
-    
-    // insertDetailsPage(movie)
-}
 
-  function maketView(selectFilmLocal){
+//==============================================================================
+// function setSelectFilm(moveId){
+
+//     console.log(`setSelectFilm`);
+    
+//     fetchRequest.fetchMovieDetails(moveId).then(date => {
+//       Object.assign(selectFilm, date);
+//       selectFilm.release_date = selectFilm.release_date.slice(0, 4);  
+//       selectFilm.changingWidthPicture = changingWidthPicture();
+//       selectFilm.genres = date.genres.map(d => {
+//         d.name.toLowerCase();
+//       });
+      
+//       console.log('====');
+//       console.log(selectFilm.release_date);
+//       console.log('====');
+//     });
+
+// }
+
+
+
+  function maketView(){
         
         // selectFilm.changingWidthPicture = changingWidthPicture();
-        const movie = bildDetailsPage(selectFilmLocal);
+        const movie = bildDetailsPage(selectFilm);
         insertDetailsPage(movie);
+        // monitorButtonStatusText();
     }
 
 function insertDetailsPage(markup) {
@@ -139,13 +175,14 @@ function insertDetailsPage(markup) {
         div: document.querySelector('#detailsPage'),
       };
   refs.div.innerHTML = markup;
+  monitorButtonStatusText();
 }
 
 
 
 function bildDetailsPage(items) {
-    console.log(`bildDetailsPage`);
-    console.log(items);
-    console.log(genres);
+  console.log('000');
+  console.log(items);
   return markupTemplate(items);
+}
 }

@@ -20,7 +20,9 @@ export default function (props) {
       </div>
 
       <div class="pagination">
-        <button tupe="button" data-action="load-more" class="load-more-Btn">Next page</button> 
+        <button tupe="button" data-action="prev_page" class="js-prevBtn paginBtn prevBtn">Prev page</button> 
+        <span class="positionPagin">1</span>
+        <button tupe="button" data-action="next-page" class="js-nextBtn paginBtn nextBtn">Next page</button> 
       </div>
 
     

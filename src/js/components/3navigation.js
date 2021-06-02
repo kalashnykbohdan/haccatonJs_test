@@ -5,17 +5,17 @@
 
     export default function (moveId){
         
-        setSelectFilm(moveId);
+        // setSelectFilm(moveId);
         
     }
 
-    function setSelectFilm(moveId){
+    // function setSelectFilm(moveId){
    
-        fetchRequest.fetchMovieDetails(moveId).then(data => Object.assign(selectFilm, data));
-        fetchRequest.fetchGenres(data => data.map(gen => genres.push(gen)));
+    //     fetchRequest.fetchMovieDetails(moveId).then(data => Object.assign(selectFilm, data));
+    //     fetchRequest.fetchGenres(data => data.map(gen => genres.push(gen)));
 
-        console.log(selectFilm);
-    }
+    //     console.log(selectFilm);
+    // }
 
  
 

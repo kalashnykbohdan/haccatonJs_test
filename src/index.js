@@ -38,8 +38,8 @@ function init() {
         // console.log(`InitialHomePage`);
         searchAndPlaginationHome();
 
-        console.log(`HomePage`);
-        console.log(root);
+        // console.log(`HomePage`);
+        // console.log(root);
         break;
     }
     case '/details': {
@@ -47,17 +47,18 @@ function init() {
         let searchParams = new URLSearchParams(pathWithId);
         
         const moveId = searchParams.get("filmId");
-        console.log(moveId);
+        // console.log(moveId);
 
         navigation(moveId);
         filmDetailsPage(moveId);
+        
         break;
     }
     case '/library': {
         MyFilmLibraryPage(root);
 
-        console.log(`library`);
-        console.log(root);
+        // console.log(`library`);
+        // console.log(root);
         libraryPage();
 
         break;

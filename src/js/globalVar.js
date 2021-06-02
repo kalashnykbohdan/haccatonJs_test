@@ -1,7 +1,7 @@
 window.renderFilms = [];
 window.genres = [];
 window.pageNumber = 1;
-window.inputVaue ='';
+window.inputValue ='';
 window.selectFilm = {};
 
 // let genres = [];

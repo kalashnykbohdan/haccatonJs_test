@@ -109,7 +109,9 @@ const refs = {
     watchedButton.classList.remove('active-nav-button');
     queueButton.classList.add('active-nav-button');
     const fromLocalStorage = JSON.parse(localStorage.getItem('filmsQueue'));
+    console.log('------------------');
     console.log(fromLocalStorage);
+    console.log('------------------');
   
     if (fromLocalStorage === null || fromLocalStorage.length === 0) {
       myLibHome.innerHTML = '';
@@ -124,7 +126,7 @@ const refs = {
         .map(result =>  {
             // createLibraryCardFunc(result)
             fetchRequest.fetchMovieDetails(result).then(createLibraryCardFunc);
-            console.log(result);
+            // console.log(result);
         })
         .join('');
       myLibHome.innerHTML = '';
@@ -153,7 +155,7 @@ const refs = {
         .map(result =>  {
             // createLibraryCardFunc(result)
             fetchRequest.fetchMovieDetails(result).then(createLibraryCardFunc);
-            console.log(result);
+            // console.log(result);
         })
         .join('');
       myLibHome.innerHTML = '';
